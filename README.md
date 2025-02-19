@@ -8,6 +8,8 @@ India's festive season, which spans from August to November, marks a period of h
 
 Our loan processing platform was designed as a **distributed, event-driven, microservices-based system** hosted on **AWS Elastic Kubernetes Service (EKS)**. Each component was built as a separate microservice, ensuring modularity, independent scaling, and fault isolation. The platform consisted of services handling **application intake, credit scoring, eligibility checks, document verification, fraud detection, and loan disbursement**. These services communicated asynchronously via **Apache Kafka**, reducing tight coupling and ensuring resilience under load.
 
+![architecture](psl_arch.png)
+
 ## Managing Load Spikes with API Gateway and Load Balancing
 
 Handling a 66% surge in requests required **intelligent request distribution and load balancing**. We used **AWS API Gateway** as the entry point, which enforced **rate limiting** to prevent overwhelming backend services during peak hours. Behind API Gateway, an **Application Load Balancer (ALB)** distributed traffic across microservices based on predefined rules.
